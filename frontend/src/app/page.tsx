@@ -60,10 +60,22 @@ export default function Home() {
     });
     text += `를 뽑았습니다.\n`;
 
-    /* api call */
-    /* api dummy response */
-    text += `당신의 운명은 ${Math.floor(Math.random() * 100)}%입니다.`;
-    setResultOfDestiny(text); // 결과를 보여준다.
+    const json_body = JSON.stringify(randomCardIdList);
+    console.log(process.env.NEXT_PUBLIC_API_BASE_URL);
+    console.log(json_body);
+    fetch(process.env.NEXT_PUBLIC_API_BASE_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: json_body,
+      credentials: "include",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        text += data.answer;
+        setResultOfDestiny(text); // 결과를 보여준다.
+      })
+      .catch(console.error);
   };
 
   return (
