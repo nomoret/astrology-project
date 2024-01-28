@@ -5,14 +5,14 @@
         "name": "Next.js: debug server-side",
         "type": "node-terminal",
         "request": "launch",
-        "cwd": "${workspaceFolder}/astrology-frontend",
+        "cwd": "${workspaceFolder}/frontend",
         "command": "npm run dev"
       },
       {
         "name": "Next.js: debug client-side",
         "type": "chrome",
         "request": "launch",
-        "cwd": "${workspaceFolder}/astrology-frontend",
+        "cwd": "${workspaceFolder}/frontend",
         "url": "http://localhost:3000"
       },
       {
@@ -20,7 +20,7 @@
         "type": "node-terminal",
         "request": "launch",
         "command": "npm run dev",
-        "cwd": "${workspaceFolder}/astrology-frontend",
+        "cwd": "${workspaceFolder}/frontend",
         "serverReadyAction": {
           "pattern": "- Local:.+(https?://.+)",
           "uriFormat": "%s",
