@@ -129,6 +129,11 @@ export default function Home() {
       <div className="mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-400">
         <button onClick={(e) => onResultOfDestiny()}>결과 확인</button>
       </div>
+      <div className="mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-400">
+        <Link href={`/dashboard`}>
+          <button>모든 카드 보기</button>
+        </Link>
+      </div>
       {resulOfDestiny && <div className="whitespace-pre">{resulOfDestiny}</div>}
       <div className="flex flex-row justify-between p-12">
         {randomCardIdList &&
